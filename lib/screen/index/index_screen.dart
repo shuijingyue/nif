@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nif/app.dart';
@@ -7,9 +5,7 @@ import 'package:nif/screen/index/count_button.dart';
 import 'package:nif/screen/index/index_screen_controller.dart';
 
 class IndexScreen extends StatelessWidget {
-  const IndexScreen({super.key, required this.title});
-
-  final String title;
+  const IndexScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +13,7 @@ class IndexScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text('title'),
       ),
       body: Center(
         child: Column(
@@ -31,7 +27,7 @@ class IndexScreen extends StatelessWidget {
               logger.v('rebuild 2');
               return Text('${controller.b.value}');
             }),
-            const CountButton()
+            const Counter(),
           ],
         ),
       ),
@@ -39,7 +35,7 @@ class IndexScreen extends StatelessWidget {
         onPressed: controller.onClick,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

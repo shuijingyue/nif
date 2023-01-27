@@ -11,10 +11,11 @@ class NifApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Nif',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const IndexScreen(title: 'Counter'),
+      home: const IndexScreen(),
     );
   }
 }

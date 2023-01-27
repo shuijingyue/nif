@@ -1,23 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:nif/app.dart';
 
-class CountButton extends StatefulWidget {
-  const CountButton({super.key});
+class Counter extends StatefulWidget {
+  const Counter({super.key});
 
   @override
-  State<StatefulWidget> createState() => _CountButtonState();
+  State<StatefulWidget> createState() => _CounterState();
 }
 
-class _CountButtonState extends State<CountButton> {
+class _CounterState extends State<Counter> {
   int count = 0;
 
   @override
   Widget build(BuildContext context) {
     logger.i('rebuild CountButton');
     return GestureDetector(
-        onTap: () {
-          setState(() {});
-        },
-        child: Text('$count', style: const TextStyle(fontSize: 32),));
+      onTap: () {
+        setState(() {});
+      },
+      child: Text(
+        '$count',
+        style: const TextStyle(fontSize: 32),
+      ),
+    );
   }
 }
